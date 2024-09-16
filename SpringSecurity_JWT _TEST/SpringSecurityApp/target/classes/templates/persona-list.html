@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -31,6 +31,8 @@
             <a  class="button-3b"     th:href="@{'/personas/actualizar/' + ${persona.id}}">Editar</a>
 <!--            <a class="button-3red" id="deleteButton" th:href="@{'/personas/eliminar/' + ${persona.id}}">Eliminar</a>-->
             <a class="button-3red deleteButton" th:href="@{'/personas/eliminar/' + ${persona.id}}">Eliminar</a>
+
+<!--            <a class="button-3red deleteButton" th:href="@{'/personas/eliminar/' + ${persona.id}}" sec:authorize="hasAnyRole('ADMIN', 'DEVELOPER', 'USER')">Eliminar</a>-->
 
         </td>
     </tr>

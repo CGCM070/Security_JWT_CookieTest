@@ -71,9 +71,9 @@ public class SecurityConfig {
 //                    .requestMatchers(HttpMethod.GET, "/personas").permitAll()
 
                             // EndPoints Privados
-                            .requestMatchers(HttpMethod.GET, "/personas/nuevo").hasAnyRole("ADMIN", "DEVELOPER", "USER")
+                            .requestMatchers(HttpMethod.GET, "/personas/nuevo").hasAnyRole("ADMIN", "DEVELOPER", "USER" ,"INVITED")
 
-                            .requestMatchers(HttpMethod.POST, "/personas/save").hasAnyRole("ADMIN", "DEVELOPER", "USER")
+                            .requestMatchers(HttpMethod.POST, "/personas/save").hasAnyRole("ADMIN", "DEVELOPER", "USER" , "INVITED")
 
                             .requestMatchers(HttpMethod.GET, "/personas/eliminar/").hasAnyRole("ADMIN", "DEVELOPER" ,"USER")
 //                    .requestMatchers(HttpMethod.GET, "/personas/eliminar/").hasAnyRole("INVITED")

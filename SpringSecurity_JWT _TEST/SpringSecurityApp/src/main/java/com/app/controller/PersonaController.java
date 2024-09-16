@@ -64,8 +64,8 @@ public class PersonaController {
         return "persona-form";
     }
 
-//    @PreAuthorize("hasAnyRole('ADMIN', 'USER', 'DEVELOPER')")
-    @PreAuthorize("hasAnyRole('INVITED')")
+    //    @PreAuthorize("hasAnyRole('ADMIN', 'USER', 'DEVELOPER')")
+    @PreAuthorize("authenticated")
     @GetMapping("/eliminar/{id}")
     public String eliminarPersona(@PathVariable long id) {
         personaService.delete(id);

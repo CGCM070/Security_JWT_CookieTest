@@ -65,6 +65,7 @@ public class SecurityConfig {
 
                             .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
                             .requestMatchers("/auth-cookie/**").permitAll()
+                            .requestMatchers(HttpMethod.POST,"/auth-cookie/register").permitAll()
 
                             // EndPoints publicos
 //                    .requestMatchers(HttpMethod.POST, "/auth/**").permitAll()
